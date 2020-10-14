@@ -1,22 +1,15 @@
-	//Paquetes:
-	package com.example.alumno.controllers;
-	import org.springframework.web.bind.annotation.CrossOrigin;
-	import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RestController;
-	import com.example.alumno.dtos.AlumnoDTO;
-	import com.example.alumno.services.AlumnoService;
-	import org.springframework.web.bind.annotation.RequestMethod;
+package com.example.alumno.controllers;
 
-	@RestController
-	@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
-	@RequestMapping(path = "/app/alumno")
-	public class AlumnoController extends BaseController<AlumnoDTO>{
+import com.example.alumno.entities.Alumno;
+import com.example.alumno.services.AlumnoServiceImpl;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-	private AlumnoService alumnoService;
-	
-	public AlumnoController(AlumnoService alumnoService) {
-		super(alumnoService);
-		this.alumnoService = alumnoService;
-	}
-	
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(path = "api/v1/alumnos")
+public class AlumnoController extends BaseControllerImpl<Alumno, AlumnoServiceImpl> {
+
+
 }
