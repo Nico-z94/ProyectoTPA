@@ -1,13 +1,14 @@
 package com.example.alumno.controllers;
 
 import com.example.alumno.entities.Base;
+import com.example.alumno.entities.Alumno;
 import com.example.alumno.services.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E, Long>> implements com.example.persona.controllers.BaseController<E, Long> {
+public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E, Long>> implements com.example.alumno.controllers.BaseController<E, Long> {
     @Autowired
     protected S servicio;
 
